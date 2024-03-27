@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 import NatuFloraLogo from "../assets/natuflora-logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,9 +37,11 @@ const Header = () => {
       <img className="w-44" src={NatuFloraLogo} />
       {windowWidth > 767 && (
         <div className="hidden md:flex flex-row justify-center space-x-9">
-          <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-            INÍCIO
-          </h1>
+          <Link to="/">
+            <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
+              INÍCIO
+            </h1>
+          </Link>
 
           <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
             SOBRE

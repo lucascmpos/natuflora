@@ -37,17 +37,17 @@ const Header = () => {
       {windowWidth > 767 && (
         <div className="hidden md:flex flex-row justify-center space-x-9">
           <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-            Início
+            INÍCIO
           </h1>
 
           <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-            Sobre
+            SOBRE
           </h1>
           <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-            Nossos produtos
+            NOSSOS PRODUTOS
           </h1>
           <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-            Contato
+            CONTATO
           </h1>
           <div className="flex flex-row gap-5 justify-center pl-20 items-center">
             <FaInstagram

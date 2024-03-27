@@ -1,6 +1,7 @@
 import Flower1 from "../assets/flower1.png";
 import BlurFlower from "../assets/about.jpg";
 import { MdOutlineWorkspacePremium, MdLocalShipping } from "react-icons/md";
+import { RiEmotionHappyFill } from "react-icons/ri";
 import { IoFlower } from "react-icons/io5";
 import { BsShopWindow } from "react-icons/bs";
 
@@ -32,8 +33,8 @@ const Home = () => {
             <MdOutlineWorkspacePremium size={70} />A melhor floricultura mundial
           </h3>
           <h3 className="text-[#e1e3de] text-2xl flex flex-col justify-center items-center gap-2">
-            <MdLocalShipping size={70} />
-            Envios para todo Brasil
+            <RiEmotionHappyFill size={70} />
+            Atendimento personalizado
           </h3>
           <h3 className="text-[#e1e3de] text-2xl flex flex-col justify-center items-center gap-2">
             <IoFlower size={70} />

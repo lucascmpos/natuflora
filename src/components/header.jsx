@@ -43,15 +43,21 @@ const Header = () => {
             </h1>
           </Link>
 
-          <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-            SOBRE
-          </h1>
-          <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-            PRODUTOS
-          </h1>
-          <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-            CONTATO
-          </h1>
+          <Link to="about">
+            <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
+              SOBRE
+            </h1>
+          </Link>
+          <Link to="products">
+            <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
+              PRODUTOS
+            </h1>
+          </Link>
+          <a href="/contato">
+            <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
+              CONTATO
+            </h1>
+          </a>
           <div className="flex flex-row gap-5 justify-center pl-20 items-center">
             <FaInstagram
               className="text-green-950 hover:text-green-800 transition-all duration-200 cursor-pointer"

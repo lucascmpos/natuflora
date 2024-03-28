@@ -3,12 +3,25 @@ import Womans from "../assets/womans.png";
 import BlurFlower from "../assets/about.jpg";
 import BlurFlower2 from "../assets/instagram.png";
 import FlowerSvg from "../assets/flowersvg.svg";
+import Flower2Svg from "../assets/flower2.svg";
 
 import Rosas from "/src/assets/rosas.jpg";
 import Girassol from "/src/assets/girassol.jpg";
 import Lirio from "/src/assets/lirios.jpg";
 import Orquidea from "/src/assets/orquidea.jpg";
 
+import Post1 from "../assets/post1.png";
+import Post2 from "../assets/post2.png";
+import Post3 from "../assets/post3.png";
+
+import PostMobile1 from "../assets/post1mobile.jpg";
+import PostMobile2 from "../assets/post2mobile.jpg";
+import PostMobile3 from "../assets/post3mobile.jpg";
+
+import { IoLocationSharp } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa6";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
 import { RiEmotionHappyFill } from "react-icons/ri";
 import { IoFlower } from "react-icons/io5";
@@ -16,6 +29,9 @@ import { BsShopWindow } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Button from "../components/button";
 import ProductCard from "../components/product-card";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 const Home = () => {
   const products = [
@@ -48,8 +64,14 @@ const Home = () => {
       imageSrc: Orquidea,
     },
   ];
+
+  const posts =
+    window.innerWidth < 500
+      ? [PostMobile1, PostMobile2, PostMobile3]
+      : [Post1, Post2, Post3];
+
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col gap">
       <img
         src={FlowerSvg}
         alt="Flower background"
@@ -61,7 +83,7 @@ const Home = () => {
           fill: "red",
         }}
       />
-      <div className="flex flex-row mt-16 gap-32 py-20 items-center justify-center">
+      <div className="flex flex-row mt-16 gap-32 py-32 items-center justify-center">
         <div className="flex flex-col">
           <h1 className="font-bold text-7xl w-auto text-green-800">
             As flores que você mais gosta,
@@ -112,7 +134,7 @@ const Home = () => {
           </h3>
         </div>
       </div>
-      <div className="flex flex-row py-5 ">
+      <div className="flex flex-row py-20 ">
         <img className="w-2/4" src={Womans} alt="Womans" />
         <div className="flex flex-col  gap-2 w-1/3 justify-center">
           <h1 className="text-[#58352d] text-6xl font-semibold">
@@ -136,11 +158,21 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="bg-[#331e19] py-20 flex flex-col w-full gap-16 justify-center items-center">
-        <h1 className="text-5xl font-semibold text-[#e1e3de]">
+      <div className=" py-20 flex flex-col w-full gap-16 justify-center items-center">
+        <img
+          src={Flower2Svg}
+          alt="Flower background"
+          className="absolute opacity-75 right pl-96 mt-36"
+          style={{
+            width: "90%",
+            height: "100%",
+            zIndex: -1,
+          }}
+        />
+        <h1 className="text-5xl font-semibold text-[#58352d]">
           Produtos em destaque!
         </h1>
-        <h2 className="text-gray-300 text-2xl text-center">
+        <h2 className="text-gray-700 text-2xl text-center">
           Desvende nossos produtos e encontre a flor perfeita pro seu momento.
           <br />
           Aqui estão as nossas flores mais amadas por vocês!
@@ -150,7 +182,7 @@ const Home = () => {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-        <Button style="bg-[#e1e3de] hover:bg-green-700 text-black hover:text-[#e1e3de] font-bold w-fit px-2 text-2xl">
+        <Button style="bg-green-600 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-2xl">
           VER TODOS PRODUTOS
         </Button>
       </div>
@@ -159,13 +191,86 @@ const Home = () => {
           className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
           style={{ backgroundImage: `url(${BlurFlower2})` }}
         />
-        <div className="relative flex flex-col justify-center items-center py-32  ">
+        <div className="relative flex flex-col justify-center items-center py-32 gap-10 ">
           <h1 className="text-5xl font-semibold text-[#e1e3de]">
             Fique por dentro das novidades
           </h1>
           <h2 className="text-2xl text-gray-200">
-            Nos siga no <span className="text-green-300">instagram</span>!
+            Nos siga no{" "}
+            <a
+              href="https://www.instagram.com/natu.floraflori/"
+              target="_blank"
+              className="text-pink-800 font-semibold"
+            >
+              instagram
+            </a>
+            !
           </h2>
+          <Carousel className="w-2/3" showStatus={false} showThumbs={false}>
+            {posts.map((post, index) => (
+              <div key={index}>
+                <img src={post} alt={`Post ${index + 1}`} />
+              </div>
+            ))}
+          </Carousel>
+        </div>
+      </div>
+      <div className="bg-[#58352d] flex flex-col justify-center items-center py-20">
+        <h1 className="text-5xl font-semibold text-[#e1e3de] mb-20">
+          Onde estamos
+        </h1>
+        <div className="flex flex-row gap-12">
+          <div className="flex flex-col">
+            <h2 className="text-3xl font-semibold text-[#e1e3de]">
+              Entre em contato
+            </h2>
+            <form className="gap-2">
+              <input
+                type="text"
+                placeholder="Seu nome"
+                className="w-full py-2 px-4 mb-4 rounded-md bg-[#e1e3de] text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-600"
+              />
+              <input
+                type="email"
+                placeholder="Seu email"
+                className="w-full py-2 px-4 mb-4 rounded-md bg-[#e1e3de] text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-600"
+              />
+              <textarea
+                placeholder="Digite sua mensagem..."
+                className="w-full py-2 px-4 mb-4 rounded-md bg-[#e1e3de] text-gray-900 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-green-600"
+              ></textarea>
+              <Button style="bg-green-600 hover:bg-green-700 text-[#e1e3de] font-bold w-full px-2 text-2xl">
+                ENVIAR EMAIL
+              </Button>
+            </form>
+          </div>
+          <div id="contato" className="flex flex-col gap-10">
+            <div className="text-2xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
+              <IoLocationSharp size={40} />
+              <div className="flex flex-col">
+                <strong>Endereço:</strong>Rua das Flores, 123, Jardim Botânico,
+                Cidade das Flores, Brasil
+              </div>
+            </div>
+            <div className="text-2xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
+              <MdEmail size={40} />
+              <div className="flex flex-col">
+                <strong>Email:</strong>contato@natuflora.com
+              </div>
+            </div>
+            <div className="text-2xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
+              <FaPhone size={40} />
+              <div className="flex flex-col">
+                <strong>Telefone:</strong>+55 1234-5678
+              </div>
+            </div>
+            <div className="text-2xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
+              <FaWhatsapp size={40} />
+              <div className="flex flex-col">
+                <strong>Whats App</strong>+55 98765-4321
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

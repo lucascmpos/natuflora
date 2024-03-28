@@ -34,7 +34,7 @@ const Header = () => {
   }, [windowWidth]);
 
   return (
-    <header className="flex justify-around items-center relative bg-[#e1e3de]  py-4 px-8 z-50">
+    <header className="flex lg:justify-around justify-evenly gap-12 lg:gap-0 items-center relative bg-[#e1e3de]  py-4 px-8 z-50">
       <img className="w-44" src={NatuFloraLogo} alt="Natu Flora Logo" />
       {windowWidth > 899 ? (
         <div className="hidden md:flex flex-row justify-center space-x-9 items-center">

@@ -47,7 +47,7 @@ const Header = () => {
             SOBRE
           </h1>
           <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-            NOSSOS PRODUTOS
+            PRODUTOS
           </h1>
           <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
             CONTATO

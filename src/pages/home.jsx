@@ -20,7 +20,7 @@ import PostMobile3 from "../assets/post3mobile.jpg";
 
 import { IoLocationSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
-import { FaPhone } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
 import { RiEmotionHappyFill } from "react-icons/ri";
@@ -109,7 +109,7 @@ const Home = () => {
             8 anos de história
           </h3>
           <h3 className="text-[#e1e3de] group text-xl lg:text-3xl flex flex-col justify-center items-center gap-2">
-            <mdOutlineWorkspacePremium
+            <MdOutlineWorkspacePremium
               className="transition-all duration-200 group-hover:scale-110"
               size={40}
             />
@@ -254,13 +254,13 @@ const Home = () => {
               </div>
             </div>
             <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
-              <mdEmail size={40} />
+              <MdEmail size={40} />
               <div className="flex flex-col">
                 <strong>Email:</strong>contato@natuflora.com
               </div>
             </div>
             <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
-              <FaPhone size={40} />
+              <FaPhoneAlt size={40} />
               <div className="flex flex-col">
                 <strong>Telefone:</strong>+55 1234-5678
               </div>

@@ -109,7 +109,7 @@ const Home = () => {
             8 anos de história
           </h3>
           <h3 className="text-[#e1e3de] group text-xl lg:text-3xl flex flex-col justify-center items-center gap-2">
-            <lgOutlineWorkspacePremium
+            <mdOutlineWorkspacePremium
               className="transition-all duration-200 group-hover:scale-110"
               size={40}
             />
@@ -254,7 +254,7 @@ const Home = () => {
               </div>
             </div>
             <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
-              <lgEmail size={40} />
+              <mdEmail size={40} />
               <div className="flex flex-col">
                 <strong>Email:</strong>contato@natuflora.com
               </div>

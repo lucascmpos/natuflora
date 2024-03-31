@@ -12,9 +12,9 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     if (!isMenuOpen) {
-      document.body.style.overflow = "hidden"; // Desativa o scroll
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; // Ativa o scroll
+      document.body.style.overflow = "";
     }
   };
 
@@ -35,7 +35,9 @@ const Header = () => {
 
   return (
     <header className="flex lg:justify-around justify-evenly gap-12 lg:gap-0 items-center relative bg-[#e1e3de]  py-4 px-8 z-50">
-      <img className="w-44" src={NatuFloraLogo} alt="Natu Flora Logo" />
+      <Link to="/">
+        <img className="w-32" src={NatuFloraLogo} alt="Natu Flora Logo" />
+      </Link>
       {windowWidth > 899 ? (
         <div className="hidden md:flex flex-row justify-center space-x-9 items-center">
           <Link to="/">

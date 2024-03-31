@@ -110,7 +110,7 @@ const ProductsPage = () => {
   return (
     <div className="flex flex-col p-1 gap-2 justify-center items-center">
       <h1 className="text-2xl mb-10 font-bold">PRODUTOS</h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 md:gap-x-3 md:gap-y-5 gap-x-1 gap-y-3 mb-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-6 md:gap-x-3 md:gap-y-5 gap-x-1 gap-y-3 mb-10">
         {products.map((product) => (
           <Link
             onClick={handleClick}

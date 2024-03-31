@@ -7,7 +7,7 @@ const About = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <div className="flex flex-col lg:flex-row px-4 lg:px-0 py-20 ">
+    <div className="flex flex-col justify-center items-center lg:gap-10 px-4 lg:px-0 py-20 ">
       <h1 className="text-[#58352d] text-4xl mb-5 lg:text-6xl font-semibold">
         Um pouco de nós
       </h1>

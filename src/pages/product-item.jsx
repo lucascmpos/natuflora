@@ -44,25 +44,29 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center mb-10">
+    <div className="flex flex-col justify-center  items-center mb-10">
       <div className="flex flex-col gap-5 mx-3 lg:flex-row h-fit p-5 w-auto bg-white rounded-lg">
         <div className="flex justify-center items-center">
           <img
-            className="w-64 rounded-lg"
+            className=" w-full h-full max-h-96 max-w  rounded-lg"
             src={product.imageSrc}
             alt={product.name}
           />
         </div>
         <div className="flex flex-col">
-          <h1 className="text-3xl font-semibold">{product.name}</h1>
-          <h2 className="text-lg mt-2">{product.description}</h2>
-          <h1 className="text-2xl font-bold text-green-600 mt-5">
-            {product.price}
+          <h1 className="text-3xl lg: text-5xl font-semibold">
+            {product.name}
           </h1>
-          <h2 className="text-xl text-gray-600">No PIX ou Cartão</h2>
-          <Button style="bg-green-500 w-auto text-2xl text-white font-semibold">
-            ENCOMENDAR
-          </Button>
+          <h2 className="text-lg lg:text-2xl mt-2">{product.description}</h2>
+          <div className="flex flex-col lg:mt-20">
+            <h1 className="text-2xl lg:text-4xl font-bold text-green-600 mt-5">
+              {product.price}
+            </h1>
+            <h2 className="text-xl text-gray-600">No PIX ou Cartão</h2>
+            <Button style="bg-green-500 hover:bg-green-400 w-auto text-2xl text-white font-semibold">
+              ENCOMENDAR
+            </Button>
+          </div>
         </div>
       </div>
       <h1 className="text-2xl mt-10 font-bold">PRODUTOS RELACIONADOS</h1>

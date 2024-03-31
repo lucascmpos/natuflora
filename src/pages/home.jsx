@@ -75,10 +75,11 @@ const Home = () => {
       <img
         src={FlowerSvg}
         alt="Flower background"
-        className="absolute top-0 left-0 z-0 opacity-15 w-full pointer-events-none"
+        className="absolute top-0 left-0 z-0 opacity-15 lg:w-1/2 pointer-events-none"
       />
-      <div className="flex flex-col lg:flex-row mt-16  py-20 items-center lg:justify-center">
-        <div className="flex flex-col px-2 lg:px-0 justify-center items-center lg:items-start text-center lg:text-left">
+      <div className="flex flex-col lg:flex-row items-center lg:justify-center">
+        <img className="w-auto lg:w-2/5 " src={Flower1} alt="Flower1" />
+        <div className="flex flex-col px-2 lg: mb-20 lg:px-5 justify-center items-center lg:items-start text-center lg:text-left">
           <h1 className="font-bold text-4xl lg:text-7xl text-green-800">
             As flores que você mais gosta,
             <br /> da melhor forma!
@@ -93,7 +94,6 @@ const Home = () => {
             ENVIE SEU PRESENTE
           </Button>
         </div>
-        <img className="w-auto lg:w-2/4" src={Flower1} alt="Flower1" />
       </div>
       <div className="relative z-10">
         <div
@@ -133,7 +133,7 @@ const Home = () => {
       </div>
       <div className="flex flex-col lg:flex-row px-4 lg:px-0 py-20 ">
         <img
-          className="w-full lg:w-2/4 mb-5 lg:mb-0"
+          className="w-full lg:w-2/4 mb-5 lg:mb-0 z-50"
           src={Womans}
           alt="Womans"
         />
@@ -196,13 +196,13 @@ const Home = () => {
             target="_blank"
             className="text-pink-800 font-semibold"
           >
-            instagram
+            INSTAGRAM
           </a>
           ! Postamos tudo oque acontece por lá!
         </h2>
 
         <Carousel
-          className="w-2/3 cursor-pointer"
+          className="lg:w-2/4 w-full cursor-pointer"
           showStatus={false}
           showThumbs={false}
           onClickItem={() =>
@@ -210,13 +210,22 @@ const Home = () => {
           }
         >
           {posts.map((post, index) => (
-            <div key={index}>
-              <img src={post} alt={`Post ${index + 1}`} />
+            <div key={index} style={{ width: "100%", height: "100%" }}>
+              <img
+                src={post}
+                alt={`Post ${index + 1}`}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
             </div>
           ))}
         </Carousel>
       </div>
       <div className="bg-[#58352d] px-3 lg:px-0 flex flex-col justify-center items-center py-20">
+        <img
+          src={Flower2Svg}
+          alt="Flower background"
+          className="absolute z-0 opacity-15 lg:w-2/6 lg:right-10 lg:bottom-0 bottom-10 pointer-events-none"
+        />
         <h1 className="text-3xl lg:text-3xl font-semibold text-[#e1e3de] mb-10">
           Onde estamos?
         </h1>

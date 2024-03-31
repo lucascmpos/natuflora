@@ -56,11 +56,11 @@ const Header = () => {
               PRODUTOS
             </h1>
           </Link>
-          <a href="/contato">
+          <Link to="contact">
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               CONTATO
             </h1>
-          </a>
+          </Link>
           <div className="flex flex-row gap-5 justify-center items-center">
             <FaInstagram
               className="text-green-950 hover:text-green-800 transition-all duration-200 cursor-pointer"

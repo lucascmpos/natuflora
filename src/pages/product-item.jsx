@@ -45,7 +45,7 @@ const ProductItem = ({ product }) => {
 
   return (
     <div className="flex flex-col justify-center items-center mb-10">
-      <div className="flex flex-col gap-5 mx-10 lg:flex-row h-fit p-5 w-auto bg-white rounded-lg">
+      <div className="flex flex-col gap-5 mx-3 lg:flex-row h-fit p-5 w-auto bg-white rounded-lg">
         <div className="flex justify-center items-center">
           <img
             className="w-64 rounded-lg"

@@ -70,7 +70,7 @@ const Home = () => {
       ? [PostMobile1, PostMobile2, PostMobile3]
       : [Post1, Post2, Post3];
 
-  const handleClick = () => {
+  const handleScrollClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
@@ -90,12 +90,15 @@ const Home = () => {
           <h2 className="font-semibold text-xl lg:text-3xl text-[#58352d]">
             Presenteie quem você ama!
           </h2>
-          <Button
-            className="mt-4 lg:mt-0"
-            style="bg-green-600 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl"
-          >
-            ENVIE SEU PRESENTE
-          </Button>
+          <Link to="/products">
+            <Button
+              onClick={handleScrollClick}
+              className="mt-4 lg:mt-0"
+              style="bg-green-600 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl"
+            >
+              ENVIE SEU PRESENTE
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="relative z-10">
@@ -157,7 +160,7 @@ const Home = () => {
             com uma atmosfera própria, arranjos exclusivos e um toque de arte em
             cada criação.
           </p>
-          <Link to="/about">
+          <Link onClick={handleScrollClick} to="/about">
             <Button style="bg-green-600 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl">
               LER MAIS
             </Button>
@@ -182,7 +185,7 @@ const Home = () => {
             {topProducts.map((product) => (
               <div key={product.id} className="px-2 lg:w-auto lg:max-w-auto">
                 <Link
-                  onClick={handleClick}
+                  onClick={handleScrollClick}
                   key={product.id}
                   to={`/products/${product.id}`}
                 >
@@ -240,7 +243,10 @@ const Home = () => {
           className="absolute z-0 opacity-15 lg:w-2/6 lg:right-10 lg:bottom-0 bottom-10 pointer-events-none"
         />
 
-        <div className="flex flex-col lg:flex-row gap-12 w-full lg:w-auto">
+        <div
+          id="contact"
+          className="flex flex-col lg:flex-row gap-12 w-full lg:w-auto"
+        >
           <div className="flex flex-col">
             <h1 className="text-3xl lg:text-3xl font-semibold text-[#e1e3de] mb-10">
               Onde estamos?

@@ -37,7 +37,7 @@ const Home = () => {
   const topProducts = [
     {
       id: 1,
-      name: "Buquê com 3 rosas vermelhas",
+      name: "Rosa vermelha",
       description: "Uma linda rosa vermelha.",
       price: "R$ 15,00",
       imageSrc: Rosas,
@@ -70,6 +70,9 @@ const Home = () => {
       ? [PostMobile1, PostMobile2, PostMobile3]
       : [Post1, Post2, Post3];
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div className="relative z-0">
       <img
@@ -178,7 +181,13 @@ const Home = () => {
           <div className="flex w-full [&::-webkit-scrollbar]:hidden lg:justify-center lg: gap-3 lg:gap-10 overflow-x-auto ">
             {topProducts.map((product) => (
               <div key={product.id} className="px-2 lg:w-auto lg:max-w-auto">
-                <ProductCard product={product} />
+                <Link
+                  onClick={handleClick}
+                  key={product.id}
+                  to={`/products/${product.id}`}
+                >
+                  <ProductCard product={product} />
+                </Link>
               </div>
             ))}
           </div>

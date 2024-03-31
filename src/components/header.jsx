@@ -46,12 +46,12 @@ const Header = () => {
             </h1>
           </Link>
 
-          <Link to="about">
+          <Link to="/about">
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               SOBRE
             </h1>
           </Link>
-          <Link to="products">
+          <Link to="/products">
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               PRODUTOS
             </h1>

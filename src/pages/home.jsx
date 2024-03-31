@@ -101,31 +101,31 @@ const Home = () => {
           style={{ backgroundImage: `url(${BlurFlower})` }}
         />
         <div className="relative  flex flex-col lg:flex-row justify-center items-center py-32 gap-20 ">
-          <h3 className="text-[#e1e3de] group text-xl lg:text-3xl flex flex-col justify-center items-center gap-2">
+          <h3 className="text-[#e1e3de] group text-3xl lg:text-4xl flex flex-col justify-center items-center gap-2">
             <BsShopWindow
               className="transition-all duration-200 group-hover:scale-110"
-              size={40}
+              size={80}
             />
             8 anos de história
           </h3>
-          <h3 className="text-[#e1e3de] group text-xl lg:text-3xl flex flex-col justify-center items-center gap-2">
+          <h3 className="text-[#e1e3de] group text-3xl lg:text-4xl flex flex-col justify-center items-center gap-2">
             <MdOutlineWorkspacePremium
               className="transition-all duration-200 group-hover:scale-110"
-              size={40}
+              size={80}
             />
             A melhor floricultura mundial
           </h3>
-          <h3 className="text-[#e1e3de] group text-xl lg:text-3xl flex flex-col justify-center items-center gap-2">
+          <h3 className="text-[#e1e3de] group text-3xl lg:text-4xl flex flex-col justify-center items-center gap-2">
             <RiEmotionHappyFill
               className="transition-all duration-200 group-hover:scale-110"
-              size={40}
+              size={80}
             />
             Atendimento personalizado
           </h3>
-          <h3 className="text-[#e1e3de] group text-xl lg:text-3xl flex flex-col justify-center items-center gap-2">
+          <h3 className="text-[#e1e3de] group text-3xl lg:text-4xl flex flex-col justify-center items-center gap-2">
             <IoFlower
               className="transition-all duration-200 group-hover:scale-110"
-              size={40}
+              size={80}
             />
             Mais de 30 tipos de flores
           </h3>
@@ -133,7 +133,7 @@ const Home = () => {
       </div>
       <div className="flex flex-col lg:flex-row px-4 lg:px-0 py-20 ">
         <img
-          className="w-full lg:w-2/4 mb-5 lg:mb-0 z-50"
+          className="w-auto lg:w-2/4 mb-5 lg:mb-0 z-50"
           src={Womans}
           alt="Womans"
         />
@@ -186,10 +186,10 @@ const Home = () => {
         </div>
       </div>
       <div className="relative px-3 lg:px-0 flex flex-col justify-center items-center py-20 lg:py-32 gap-10 ">
-        <h1 className="text-2xl lg:text-3xl font-semibold text-[#58352d]">
+        <h1 className="text-2xl lg:text-5xl  font-semibold text-[#58352d]">
           Fique por dentro das novidades
         </h1>
-        <h2 className="text-lg lg:text-2xl text-gray-700">
+        <h2 className="text-lg lg:text-2xl  text-gray-700">
           Nos siga no{" "}
           <a
             href="https://www.instagram.com/natu.floraflori/"
@@ -198,7 +198,7 @@ const Home = () => {
           >
             INSTAGRAM
           </a>
-          ! Postamos tudo oque acontece por lá!
+          !<br /> Postamos tudo oque acontece por lá!
         </h2>
 
         <Carousel

@@ -34,7 +34,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 const Home = () => {
-  const products = [
+  const topProducts = [
     {
       id: 1,
       name: "Buquê com 3 rosas vermelhas",
@@ -75,7 +75,7 @@ const Home = () => {
       <img
         src={FlowerSvg}
         alt="Flower background"
-        className="absolute top-0 left-0 z-0 opacity-15 lg:w-1/2 pointer-events-none"
+        className="absolute top-0 left-0 z-0 opacity-15  lg:w-1/2 pointer-events-none"
       />
       <div className="flex flex-col lg:flex-row items-center lg:justify-center">
         <img className="w-auto lg:w-2/5 " src={Flower1} alt="Flower1" />
@@ -101,31 +101,31 @@ const Home = () => {
           style={{ backgroundImage: `url(${BlurFlower})` }}
         />
         <div className="relative  flex flex-col lg:flex-row justify-center items-center py-32 gap-20 ">
-          <h3 className="text-[#e1e3de] group text-3xl lg:text-4xl flex flex-col justify-center items-center gap-2">
+          <h3 className="text-[#e1e3de] group text-2xl lg:text-4xl flex flex-col justify-center items-center gap-2">
             <BsShopWindow
               className="transition-all duration-200 group-hover:scale-110"
-              size={80}
+              size={70}
             />
             8 anos de história
           </h3>
-          <h3 className="text-[#e1e3de] group text-3xl lg:text-4xl flex flex-col justify-center items-center gap-2">
+          <h3 className="text-[#e1e3de] group text-2xl lg:text-4xl flex flex-col justify-center items-center gap-2">
             <MdOutlineWorkspacePremium
               className="transition-all duration-200 group-hover:scale-110"
-              size={80}
+              size={70}
             />
             A melhor floricultura mundial
           </h3>
-          <h3 className="text-[#e1e3de] group text-3xl lg:text-4xl flex flex-col justify-center items-center gap-2">
+          <h3 className="text-[#e1e3de] group text-2xl lg:text-4xl flex flex-col justify-center items-center gap-2">
             <RiEmotionHappyFill
               className="transition-all duration-200 group-hover:scale-110"
-              size={80}
+              size={70}
             />
             Atendimento personalizado
           </h3>
-          <h3 className="text-[#e1e3de] group text-3xl lg:text-4xl flex flex-col justify-center items-center gap-2">
+          <h3 className="text-[#e1e3de] group text-2xl lg:text-4xl flex flex-col justify-center items-center gap-2">
             <IoFlower
               className="transition-all duration-200 group-hover:scale-110"
-              size={80}
+              size={70}
             />
             Mais de 30 tipos de flores
           </h3>
@@ -133,7 +133,7 @@ const Home = () => {
       </div>
       <div className="flex flex-col lg:flex-row px-4 lg:px-0 py-20 ">
         <img
-          className="w-auto lg:w-2/4 mb-5 lg:mb-0 z-50"
+          className="w-auto lg:w-2/4 mb-5 lg:mb-0 "
           src={Womans}
           alt="Womans"
         />
@@ -154,7 +154,7 @@ const Home = () => {
             com uma atmosfera própria, arranjos exclusivos e um toque de arte em
             cada criação.
           </p>
-          <Link to="/about" className="text-green-800 hover:underline">
+          <Link to="/about">
             <Button style="bg-green-600 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl">
               LER MAIS
             </Button>
@@ -166,23 +166,27 @@ const Home = () => {
           className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
           style={{ backgroundImage: `url(${BlurFlower2})` }}
         />
-        <div className="relative flex flex-col justify-center items-center px-2 lg:px-0 py-20 lg:py-32 gap-10 ">
+        <div className="relative flex flex-col justify-center items-center lg:px-0 py-20 lg:py-32 gap-10 ">
           <h1 className="text-3xl lg:text-5xl font-semibold text-[#e1e3de]">
             Produtos em destaque!
           </h1>
-          <h2 className="text-lg lg:text-2xl text-gray-200 text-center">
+          <h2 className="text-lg lg:text-2xl text-gray-300 text-center">
             Desvende nossos produtos e encontre a flor perfeita pro seu momento.
             <br />
             Aqui estão as nossas flores mais amadas por vocês!
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-10">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+          <div className="flex w-full [&::-webkit-scrollbar]:hidden lg:justify-center lg: gap-3 lg:gap-10 overflow-x-auto ">
+            {topProducts.map((product) => (
+              <div key={product.id} className="px-2 lg:w-auto lg:max-w-auto">
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
-          <Button style="bg-green-600 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl">
-            VER TODOS PRODUTOS
-          </Button>
+          <Link to="/products">
+            <Button style="bg-green-600 lg:mt-20 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl">
+              VER TODOS PRODUTOS
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="relative px-3 lg:px-0 flex flex-col justify-center items-center py-20 lg:py-32 gap-10 ">
@@ -202,7 +206,7 @@ const Home = () => {
         </h2>
 
         <Carousel
-          className="lg:w-2/4 w-full cursor-pointer"
+          className="lg:w-2/4 w-2/2 cursor-pointer"
           showStatus={false}
           showThumbs={false}
           onClickItem={() =>
@@ -226,11 +230,42 @@ const Home = () => {
           alt="Flower background"
           className="absolute z-0 opacity-15 lg:w-2/6 lg:right-10 lg:bottom-0 bottom-10 pointer-events-none"
         />
-        <h1 className="text-3xl lg:text-3xl font-semibold text-[#e1e3de] mb-10">
-          Onde estamos?
-        </h1>
+
         <div className="flex flex-col lg:flex-row gap-12 w-full lg:w-auto">
-          <div className="flex flex-col w-full lg:w-1/2">
+          <div className="flex flex-col">
+            <h1 className="text-3xl lg:text-3xl font-semibold text-[#e1e3de] mb-10">
+              Onde estamos?
+            </h1>
+
+            <div className="flex flex-col gap-10 w-full lg:w-1/2">
+              <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
+                <IoLocationSharp size={40} />
+                <div className="flex flex-col lg:w-full">
+                  <strong>Endereço:</strong>Rua das Flores, 123, Jardim
+                  Botânico, Cidade das Flores, Brasil
+                </div>
+              </div>
+              <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
+                <MdEmail size={40} />
+                <div className="flex flex-col">
+                  <strong>Email:</strong>contato@natuflora.com
+                </div>
+              </div>
+              <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
+                <FaPhoneAlt size={40} />
+                <div className="flex flex-col">
+                  <strong>Telefone:</strong>+55 1234-5678
+                </div>
+              </div>
+              <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
+                <FaWhatsapp size={40} />
+                <div className="flex flex-col">
+                  <strong>Whats App</strong>+55 98765-4321
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col w-full lg:mt-20 lg:w-1/2">
             <h2 className="text-lg lg:text-xl font-semibold text-[#e1e3de]">
               Entre em contato
             </h2>
@@ -253,33 +288,6 @@ const Home = () => {
                 ENVIAR EMAIL
               </Button>
             </form>
-          </div>
-          <div className="flex flex-col gap-10 w-full lg:w-1/2">
-            <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
-              <IoLocationSharp size={40} />
-              <div className="flex flex-col">
-                <strong>Endereço:</strong>Rua das Flores, 123, Jardim Botânico,
-                Cidade das Flores, Brasil
-              </div>
-            </div>
-            <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
-              <MdEmail size={40} />
-              <div className="flex flex-col">
-                <strong>Email:</strong>contato@natuflora.com
-              </div>
-            </div>
-            <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
-              <FaPhoneAlt size={40} />
-              <div className="flex flex-col">
-                <strong>Telefone:</strong>+55 1234-5678
-              </div>
-            </div>
-            <div className="text-lg lg:text-xl flex flex-row gap-2 items-center text-[#e1e3de] mt-4">
-              <FaWhatsapp size={40} />
-              <div className="flex flex-col">
-                <strong>Whats App</strong>+55 98765-4321
-              </div>
-            </div>
           </div>
         </div>
       </div>

@@ -41,26 +41,22 @@ const Header = () => {
       </Link>
       {windowWidth > 899 ? (
         <div className="hidden md:flex flex-row justify-center space-x-9 items-center">
-          <Link to="/" onClick={toggleMenu}>
+          <Link to="/">
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               INÍCIO
             </h1>
           </Link>
-          <Link to="/about" onClick={toggleMenu}>
+          <Link to="/about">
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               SOBRE
             </h1>
           </Link>
-          <Link to="/products" onClick={toggleMenu}>
+          <Link to="/products">
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               PRODUTOS
             </h1>
           </Link>
-          <a href="/contato" onClick={toggleMenu}>
-            <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-              CONTATO
-            </h1>
-          </a>
+
           <div className="flex flex-row gap-5 justify-center items-center">
             <a
               href="https://www.instagram.com/natu.floraflori/"
@@ -111,11 +107,7 @@ const Header = () => {
               PRODUTOS
             </h1>
           </Link>
-          <a href="/contato" onClick={toggleMenu}>
-            <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
-              CONTATO
-            </h1>
-          </a>
+
           <div className="flex flex-row gap-5 justify-center items-center">
             <a
               href="https://www.instagram.com/natu.floraflori/"

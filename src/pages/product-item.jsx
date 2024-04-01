@@ -48,7 +48,7 @@ const ProductItem = ({ product }) => {
       <div className="flex flex-col gap-5 mx-3 lg:flex-row h-fit p-5 w-auto bg-white rounded-lg">
         <div className="flex justify-center items-center">
           <img
-            className=" w-full h-full max-h-96 max-w  rounded-lg"
+            className=" w-full h-auto max-h-96 max-w object-contain rounded-lg"
             src={product.imageSrc}
             alt={product.name}
           />

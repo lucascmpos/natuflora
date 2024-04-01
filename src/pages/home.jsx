@@ -34,6 +34,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 const Home = () => {
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const topProducts = [
     {
       id: 1,
@@ -83,7 +86,7 @@ const Home = () => {
       <div className="flex flex-col lg:flex-row items-center lg:justify-center">
         <img className="w-auto lg:w-2/5 " src={Flower1} alt="Flower1" />
         <div className="flex flex-col px-2 lg: mb-20 lg:px-5 justify-center items-center lg:items-start text-center lg:text-left">
-          <h1 className="font-bold text-4xl lg:text-7xl text-green-800">
+          <h1 className="font-bold w-72 lg:w-auto text-4xl lg:text-7xl text-green-800">
             As flores que você mais gosta,
             <br /> da melhor forma!
           </h1>
@@ -92,7 +95,7 @@ const Home = () => {
           </h2>
           <Link to="/products">
             <Button
-              onClick={handleScrollClick}
+              onClick={handleClick}
               className="mt-4 lg:mt-0"
               style="bg-green-600 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl"
             >
@@ -139,7 +142,7 @@ const Home = () => {
       </div>
       <div className="flex flex-col lg:flex-row px-4 lg:px-0 py-20 ">
         <img
-          className="w-auto lg:w-2/4 mb-5 lg:mb-0 "
+          className="w-auto md:object-contain lg:w-2/4 mb-5 lg:mb-0 "
           src={Womans}
           alt="Womans"
         />
@@ -160,8 +163,11 @@ const Home = () => {
             com uma atmosfera própria, arranjos exclusivos e um toque de arte em
             cada criação.
           </p>
-          <Link onClick={handleScrollClick} to="/about">
-            <Button style="bg-green-600 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl">
+          <Link to="/about">
+            <Button
+              onClick={handleClick}
+              style="bg-green-600 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl"
+            >
               LER MAIS
             </Button>
           </Link>
@@ -195,7 +201,10 @@ const Home = () => {
             ))}
           </div>
           <Link to="/products">
-            <Button style="bg-green-600 lg:mt-20 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl">
+            <Button
+              onClick={handleClick}
+              style="bg-green-600 lg:mt-20 hover:bg-green-700 text-[#e1e3de] font-bold w-fit px-2 text-lg lg:text-2xl"
+            >
               VER TODOS PRODUTOS
             </Button>
           </Link>

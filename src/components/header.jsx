@@ -4,6 +4,7 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 import NatuFloraLogo from "../assets/natuflora-logo.png";
 import { Link } from "react-router-dom";
+import "./header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,27 +41,26 @@ const Header = () => {
       </Link>
       {windowWidth > 899 ? (
         <div className="hidden md:flex flex-row justify-center space-x-9 items-center">
-          <Link to="/">
+          <Link to="/" onClick={toggleMenu}>
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               INÍCIO
             </h1>
           </Link>
-
-          <Link to="/about">
+          <Link to="/about" onClick={toggleMenu}>
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               SOBRE
             </h1>
           </Link>
-          <Link to="/products">
+          <Link to="/products" onClick={toggleMenu}>
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               PRODUTOS
             </h1>
           </Link>
-          <Link to="contact">
+          <a href="/contato" onClick={toggleMenu}>
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               CONTATO
             </h1>
-          </Link>
+          </a>
           <div className="flex flex-row gap-5 justify-center items-center">
             <a
               href="https://www.instagram.com/natu.floraflori/"
@@ -90,8 +90,12 @@ const Header = () => {
           )}
         </div>
       )}
-      {isMenuOpen && (
-        <div className="lg:hidden fixed top-0 left-0 w-full h-full bg-[#e1e3de]   flex flex-col items-center justify-center space-y-4 py-4 z-50">
+      <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
+        <div className="overlay" onClick={toggleMenu}></div>
+        <div className="menu-content">
+          <Link to="/">
+            <img className="w-32" src={NatuFloraLogo} alt="Natu Flora Logo" />
+          </Link>
           <Link to="/" onClick={toggleMenu}>
             <h1 className="text-green-950 hover:text-green-800 transition-all duration-200 font-semibold text-3xl cursor-pointer">
               INÍCIO
@@ -133,7 +137,7 @@ const Header = () => {
             onClick={toggleMenu}
           />
         </div>
-      )}
+      </div>
     </header>
   );
 };

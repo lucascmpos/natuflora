@@ -3,9 +3,10 @@ import Womans from "../assets/womans.png";
 import Button from "../components/button";
 
 const About = () => {
-  const handleScrollClick = () => {
+  const handleClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
   return (
     <div className="flex flex-col justify-center items-center lg:gap-10 px-4 lg:px-0 py-20 ">
       <h1 className="text-[#58352d] text-4xl mb-5 lg:text-6xl font-semibold">
@@ -42,8 +43,11 @@ const About = () => {
         <h1 className="text-2xl font-semibold">
           Estamos aqui para te oferecer o nosso melhor!
         </h1>
-        <Link onClick={handleScrollClick} to="/">
-          <Button style="bg-green-500 w-fit text-xl px-2 font-bold text-white">
+        <Link to="/">
+          <Button
+            onClick={handleClick}
+            style="bg-green-500 w-fit text-xl px-2 font-bold text-white"
+          >
             VOLTAR PARA O ÍNICIO
           </Button>
         </Link>

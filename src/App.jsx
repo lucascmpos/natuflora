@@ -1,9 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import ProductsPage from "./pages/products-page";
-import ProductItem from "./pages/product-item";
-import Header from "./components/header";
-import Home from "./pages/home";
-import About from "./pages/about";
+import React, { Suspense } from "react";
+
+const ProductsPage = React.lazy(() => import("./pages/products-page"));
+const ProductItem = React.lazy(() => import("./pages/product-item"));
+const Header = React.lazy(() => import("./components/header"));
+const Home = React.lazy(() => import("./pages/home"));
+const About = React.lazy(() => import("./pages/about"));
+const Footer = React.lazy(() => import("./components/footer"));
 
 import Rosas from "./assets/rosas.jpg";
 import Girassol from "./assets/girassol.jpg";
@@ -17,8 +20,7 @@ import Cravo from "./assets/cravo.png";
 import Hortensia from "./assets/hortensia.png";
 import Dalia from "./assets/dalia.png";
 import Iris from "./assets/iris.jpg";
-
-import Footer from "./components/footer";
+import LoadingIndicator from "./components/loading-indicator";
 
 function App() {
   const products = [
@@ -122,20 +124,22 @@ function App() {
 
   return (
     <div>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<ProductsPage />} />
-        {products.map((product) => (
-          <Route
-            key={product.id}
-            path={`/products/${product.id}`}
-            element={<ProductItem product={product} />}
-          />
-        ))}
-      </Routes>
-      <Footer />
+      <Suspense fallback={<LoadingIndicator />}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<ProductsPage />} />
+          {products.map((product) => (
+            <Route
+              key={product.id}
+              path={`/products/${product.id}`}
+              element={<ProductItem product={product} />}
+            />
+          ))}
+        </Routes>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
